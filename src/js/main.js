@@ -22,8 +22,8 @@ $(document).ready(function(){
         trigger = false;
         if(!trigger) {
             tl.to('.align-bar span:nth-child(1)', 0.4, {x: left, ease: Back.easeOut.config(1.3)})
-            .to('.align-bar span:nth-child(2)', 0.4, {x: left, ease: Back.easeOut.config(1.3)}, '-=0.2')
-            .to('.align-bar span:nth-child(3)', 0.4, {x: barLeft, width: bar, ease: Back.easeOut.config(1.3)}, '-=0.2')
+            .to('.align-bar span:nth-child(2)', 0.4, {x: left, ease: Back.easeOut.config(1.3)}, '-=0.25')
+            .to('.align-bar span:nth-child(3)', 0.4, {x: barLeft, width: bar, ease: Back.easeOut.config(1.3)}, '-=0.25')
             trigger = true;
         }
         
