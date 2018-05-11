@@ -10,9 +10,7 @@ $(document).ready(function(){
         var left = $(this).position().left,
             bar = $(this).find('span:last-child').width(),
             barLeft = $(this).find('span:last-child').position().left;
-            console.log(barLeft);
-
-        //TweenMax.to('.wrap', 0.3, {scale: 0.96, repeat: 1, yoyo: true})
+            
         trigger = false;
         if(!trigger) {
             tl.to('.align-bar span:nth-child(1)', 0.4, {x: left, ease: Back.easeOut.config(1.3)})
