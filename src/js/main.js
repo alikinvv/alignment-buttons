@@ -6,12 +6,6 @@ $(document).ready(function(){
     $('.align-bar').css('opacity', 1);
     $('.align-bar span:last-child').css('width', $('.align__left span:last-child').width()).css('opacity', 1);
 
-    // $('.align').click(function() {
-    //     if($(this).hassClass('.align__center')) {
-    //         $('.align')
-    //     }
-    // });
-
     $('.align').click(function() {
         var left = $(this).position().left,
             bar = $(this).find('span:last-child').width(),

@@ -6,12 +6,6 @@ $(document).ready(function(){
     $('.align-bar').css('opacity', 1);
     $('.align-bar span:last-child').css('width', $('.align__left span:last-child').width()).css('opacity', 1);
 
-    // $('.align').click(function() {
-    //     if($(this).hassClass('.align__center')) {
-    //         $('.align')
-    //     }
-    // });
-
     $('.align').click(function() {
         var left = $(this).position().left,
             bar = $(this).find('span:last-child').width(),
@@ -22,8 +16,8 @@ $(document).ready(function(){
         trigger = false;
         if(!trigger) {
             tl.to('.align-bar span:nth-child(1)', 0.4, {x: left, ease: Back.easeOut.config(1.3)})
-            .to('.align-bar span:nth-child(2)', 0.4, {x: left, ease: Back.easeOut.config(1.3)}, '-=0.2')
-            .to('.align-bar span:nth-child(3)', 0.4, {x: barLeft, width: bar, ease: Back.easeOut.config(1.3)}, '-=0.2')
+            .to('.align-bar span:nth-child(2)', 0.4, {x: left, ease: Back.easeOut.config(1.3)}, '-=0.25')
+            .to('.align-bar span:nth-child(3)', 0.4, {x: barLeft, width: bar, ease: Back.easeOut.config(1.3)}, '-=0.25')
             trigger = true;
         }
         
