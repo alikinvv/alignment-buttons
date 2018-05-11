@@ -57,4 +57,12 @@ $(document).ready(function(){
         });
     });
 
+    // FOR #4
+    TweenMax.set(CSSRulePlugin.getRule('.item-4 .align-left:before'), {cssRule: { top: 55 }});
+    
+    $('.item-4 .align').click(function() {
+        $('.item-4 .align').removeClass('active');
+        $(this).addClass('active');
+    });
+
 });

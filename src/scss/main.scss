@@ -42,7 +42,7 @@ html, body {
 		position: absolute;
 		right: 25px;
 		top: 15px;
-		color: #333;
+		color: #888;
 	}
 }
 
@@ -186,7 +186,7 @@ html, body {
 // FOR #3
 
 .item-3 {
-	width: 100%;
+	width: 50%;
 	background: #E2EAF4;
 	&:before {content: '#3'}
 	.wrap {
@@ -222,47 +222,24 @@ html, body {
 			height: 20px;
 			top: 50%;
 			transform: translateY(-50%);
-			&-2 {
-				height: 12px;
-			}
+			&-2 {height: 12px;}
 		}
 		&-left {
-			.line-2 {
-				left: 14px;
-			}
-			.square-2 {
-				left: 14px;
-			}
+			.line-2 {left: 14px;}
+			.square-2 {left: 14px;}
 		}
 		&-center {	
-			left: 4px;		
-			.line-1 {
-				left: 3px;
-			}
-			.square-1 {
-				left: 0px;
-			}
-			.line-2 {
-				left: 17px;
-			}
-			.square-2 {
-				left: 14px;
-			}
+			left: 4px;
+			.line-1 {left: 3px;}
+			.square-1 {left: 0px;}
+			.line-2 {left: 17px;}
+			.square-2 {left: 14px;}
 		}
 		&-right {
-			.line-1 {
-				left: 13px;
-			}
-			.square-1 {
-				left: 7px;
-			}
-
-			.line-2 {
-				left: 27px;
-			}
-			.square-2 {
-				left: 21px;
-			}
+			.line-1 {left: 13px;}
+			.square-1 {left: 7px;}
+			.line-2 {left: 27px;}
+			.square-2 {left: 21px;}
 		}
 		&-bar {
 			position: absolute;
@@ -274,6 +251,114 @@ html, body {
 			pointer-events: none;
 			margin: 0;
 			span {background: #1C8BFD;}
+		}
+	}
+}
+
+// FOR #4
+
+.item-4 {
+	width: 50%;
+	background: #F1F4FA;
+	&:before {content: '#4'}
+	.wrap {
+		background: #fff;
+		border-radius: 20px;
+		padding: 27px 35px;
+		width: 197px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		box-shadow: 0px 20px 61px -14px rgba(0,0,0,0.2);
+		overflow: hidden;
+	}
+	.align {
+		display: inline-block;
+		position: relative;
+		width: 40px;
+		height: 23px;
+		cursor: pointer;		
+		&:before {
+			content: '';
+			position: absolute;
+			width: 4px;
+			height: 15px;
+			top: 5px;
+			left: 8px;
+			background: #F16F6E;
+			z-index: 99;
+			transition: all .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			width: 4px;
+			height: 12px;
+			top: 5px;
+			left: 18px;
+			background: #F16F6E;
+			z-index: 99;
+			transition: all .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+		}
+		span {
+			background: #BFCCD7;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.line {
+			width: 30px;
+			height: 2px;
+		}
+		.square {
+			width: 4px;
+			height: 15px;
+			top: 5px;
+			&-2 {height: 12px;}
+		}
+		&-left {			
+			.square-1 {left: 8px;}
+			.square-2 {left: 18px;}
+			&.active {
+				&:before, &:after {top: 5px;}
+			}
+		}
+		&-center {	
+			left: 1px;		
+			.line {top: 10px;}
+			.square-1 {
+				top: 4px;
+				left: 8px;
+			}
+			.square-2 {left: 18px;}		
+			&:before, &:after {top: 55px;}
+			&.active {
+				&:before {top: 4px;}
+				&:after {top: 5px;}
+			}	
+		}
+		&-right {
+			.line {
+				top: initial;
+				bottom: 0;
+			}
+			.square-1 {
+				top: initial;
+				bottom: 5px;
+				left: 8px;
+			}
+			.square-2 {
+				top: initial;
+				bottom: 5px;
+				left: 18px;
+			}
+			&:before, &:after {top: -55px;}
+			&.active {
+				&:before {top: 3px;}
+				&:after {top: 6px;}
+			}	
 		}
 	}
 }
