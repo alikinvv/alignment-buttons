@@ -25,64 +25,160 @@
 
 html, body {
 	height: 100%;
+	font-family: 'Lato', sans-serif;
 }
 
 .item {
-	background: #F0F0F0;
-	width: 100%;
+	width: 50%;
 	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.wrap {
-	background: #fff;
-	border-radius: 20px;
-	padding: 30px 37px;
-	display: inline-block;
+	float: left;
 	position: relative;
-	box-shadow: 0px 20px 61px -14px rgba(0,0,0,0.2);
+	&:before {
+		font-weight: bold;
+		font-size: 35px;
+		position: absolute;
+		right: 25px;
+		top: 15px;
+		color: #333;
+	}
 }
 
-.align {
-	display: inline-block;
-	margin-right: 35px;	
-	cursor: pointer;
-	span {
-		background: #E1E1E1;
-		display: block;
-		margin-bottom: 6px;
-		width: 27px;
-		height: 4px;
-		border-radius: 10px;
-		&:last-child {margin-bottom: 0;}
-	}	
-	&__left span:last-child {
-		width: 12px;
-		float: left;
-	}
-	&__center span:last-child {
-		width: 13px;
+
+// FOR #1
+
+.item-1 {
+	background: #F0F0F0;
+	&:before {content: '#1'}
+	.wrap {
+		background: #fff;
+		border-radius: 20px;
+		padding: 30px 37px;
+		display: inline-block;
 		position: relative;
-		left: 50%;
-		transform: translateX(-50%);
+		box-shadow: 0px 20px 61px -14px rgba(0,0,0,0.2);
 	}
-	&__right span:last-child {
-		width: 13px;
-		float: right;
+	.align {
+		display: inline-block;
+		margin-right: 35px;	
+		cursor: pointer;
+		span {
+			background: #E1E1E1;
+			display: block;
+			margin-bottom: 6px;
+			width: 27px;
+			height: 4px;
+			border-radius: 10px;
+			&:last-child {margin-bottom: 0;}
+		}	
+		&__left span:last-child {
+			width: 12px;
+			float: left;
+		}
+		&__center span:last-child {
+			width: 13px;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&__right span:last-child {
+			width: 13px;
+			float: right;
+		}
+		&__justify {margin-right: 0;}
+		&-bar {
+			position: absolute;
+			top: 30px;
+			left: 0;
+			width: 100%;
+			opacity: 0;
+			margin-right: 0;
+			pointer-events: none;
+			span {background: #383838;}
+		}
 	}
-	&__justify {
-		margin-right: 0;
+}
+
+// FOR #2
+
+.item-2 {
+	background: #D7DDE9;
+	&:before {content: '#2'}
+	.wrap {
+		background: #fff;
+		border-radius: 20px;
+		padding: 25px 37px;
+		display: inline-block;
+		position: relative;
+		box-shadow: 0px 20px 61px -14px rgba(0,0,0,0.2);
 	}
-	&-bar {
-		position: absolute;
-		top: 30px;
-		left: 0;
-		width: 100%;
-		opacity: 0;
-		margin-right: 0;
-		pointer-events: none;
-		span {background: #383838;}
+	.align {
+		background: #D7DDE9;
+		width: 40px;
+		height: 40px;
+		display: inline-block;
+		margin: 0 15px;
+		cursor: pointer;
+		position: relative;
+		overflow: hidden;
+		img {
+			position: relative;
+			z-index: 2;
+		}
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			background: #14D96A;
+			z-index: 1;
+			transition: all .3s ease-in-out;
+		}
+		&-compound {
+			&:before {
+				top: 50%;
+				left: 50%;
+				transform:translate(-50%,-50%);
+				width: 0;
+				height: 0;				
+			}
+			&.active:before {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		&-top {
+			&:before {
+				top: 0;
+				left: 0;
+				width: 0;
+				height: 100%;
+			}
+			&.active:before {width: 100%;}
+		}
+		&-cross {
+			&:before {
+				top: 50%;
+				left: 50%;
+				transform:translate(-50%,-50%);
+				width: 0;
+				height: 0;
+				border-radius: 50%;
+			}
+			&.active:before {
+				width: 150%;
+				height: 150%;
+			}
+		}
+		&-exception {
+			&:before {
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 0;
+			}
+			&.active:before {height: 100%;}
+		}
 	}
 }
