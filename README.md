@@ -11,3 +11,5 @@
 ![aligment buttons](https://cdn.dribbble.com/users/1773016/screenshots/5812900/2.gif)
 
 ![aligment buttons](https://cdn.dribbble.com/users/1773016/screenshots/5806190/1.gif)
+
+[![Analytics](https://ga-beacon.appspot.com/UA-31485994-5/alignment-buttons)](https://github.com/alikinvv/alignment-buttons)
